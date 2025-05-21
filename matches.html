@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDate - Your Matches</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/datadate-unified.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>DataDate</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="matches.html" class="active">Matches</a></li>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="messages.html">Messages</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="data-upload.html">Upload Data</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div style="text-align: center; margin: 40px 0;">
+                <h1 class="section-title">Your Matches</h1>
+                <p style="max-width: 700px; margin: 0 auto;">Based on your data analysis, we've found these potential matches for you.</p>
+            </div>
+
+            <div style="display: flex; margin-bottom: 30px;">
+                <div style="display: flex; gap: 15px; background: white; border-radius: 10px; padding: 15px; flex-grow: 1; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div class="tabs" style="border-bottom: none;">
+                        <div class="tab active">All Matches</div>
+                        <div class="tab">New Matches <span style="background: var(--primary-color); color: white; padding: 2px 6px; border-radius: 10px; font-size: 12px; margin-left: 5px;">3</span></div>
+                        <div class="tab">Mutual Matches</div>
+                        <div class="tab">Favorites</div>
+                    </div>
+                    <div style="margin-left: auto; position: relative;">
+                        <input type="text" placeholder="Search matches..." style="padding-right: 35px;">
+                        <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--light-text);"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div id="matches-container">
+                <!-- Match content will be loaded from match-data.js -->
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>DataDate</h2>
+                    <p>Where Data Drives Connection</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="matches.html">Matches</a></li>
+                        <li><a href="compatibility.html">Compatibility</a></li>
+                        <li><a href="messages.html">Messages</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="data-upload.html">Upload Data</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DataDate - Where Data Drives Connection</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/match-data.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

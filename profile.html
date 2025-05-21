@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDate - Your Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/datadate-unified.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>DataDate</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="matches.html">Matches</a></li>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="messages.html">Messages</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="data-upload.html">Upload Data</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); height: 200px; border-radius: 10px 10px 0 0; margin-top: 40px; position: relative;">
+                <div style="position: absolute; left: 50%; bottom: -50px; transform: translateX(-50%); width: 150px; height: 150px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; border: 5px solid white; overflow: hidden;">
+                    <div id="profile-avatar-placeholder" style="width: 100%; height: 100%; background-color: var(--primary-light); color: white; display: flex; align-items: center; justify-content: center; font-size: 60px; font-weight: bold;">
+                        AJ
+                    </div>
+                </div>
+                <div style="position: absolute; right: 30px; bottom: 20px;">
+                    <button class="btn btn-outline" style="background: rgba(255,255,255,0.2); border-color: white; color: white;">Edit Cover Photo</button>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 0 0 10px 10px; padding: 60px 30px 30px; margin-bottom: 40px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h1 style="font-size: 28px; margin-bottom: 5px;">Alex Johnson</h1>
+                <p style="color: var(--light-text); margin-bottom: 15px;">Software Engineer • 32 • Male • San Francisco, CA</p>
+                <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 20px;">
+                    <button class="btn btn-outline" id="change-color-btn"><i class="fas fa-palette" style="margin-right: 8px;"></i> Change Colors</button>
+                    <button class="btn btn-primary"><i class="fas fa-edit" style="margin-right: 8px;"></i> Edit Profile</button>
+                </div>
+                <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <p>Tech enthusiast with a passion for hiking, photography, and discovering new coffee shops. Looking for someone who appreciates both outdoor adventures and cozy evenings with good conversation.</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin-bottom: 60px;">
+                <div>
+                    <!-- Profile Details Section -->
+                    <div class="card" style="margin-bottom: 30px;">
+                        <div class="card-header">
+                            <h2 style="font-size: 20px; font-weight: 600;">Profile Details</h2>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(33, 147, 176, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; margin-bottom: 2px;">Software Engineer</div>
+                                        <div style="color: var(--light-text); font-size: 14px;">at Tech Innovations Inc.</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(33, 147, 176, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; margin-bottom: 2px;">Computer Science</div>
+                                        <div style="color: var(--light-text); font-size: 14px;">University of California</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(33, 147, 176, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; margin-bottom: 2px;">San Francisco, CA</div>
+                                        <div style="color: var(--light-text); font-size: 14px;">Living here since 2018</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(33, 147, 176, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; margin-bottom: 2px;">Looking for</div>
+                                        <div style="color: var(--light-text); font-size: 14px;">Long-term relationship</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interests Section -->
+                    <div class="card" style="margin-bottom: 30px;">
+                        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h2 style="font-size: 20px; font-weight: 600;">Interests</h2>
+                            <button class="btn btn-sm btn-outline"><i class="fas fa-edit"></i> Edit</button>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="tag">Technology</span>
+                                <span class="tag">Hiking</span>
+                                <span class="tag">Photography</span>
+                                <span class="tag">Coffee</span>
+                                <span class="tag">Traveling</span>
+                                <span class="tag">Reading</span>
+                                <span class="tag">Music</span>
+                                <span class="tag">Programming</span>
+                                <span class="tag">Board Games</span>
+                                <span class="tag">Rock Climbing</span>
+                                <span class="tag">Cooking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Insights Section -->
+                    <div class="card">
+                        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h2 style="font-size: 20px; font-weight: 600;">Data Insights</h2>
+                            <a href="data-upload.html" class="btn btn-sm btn-outline"><i class="fas fa-plus"></i> Add More Data</a>
+                        </div>
+                        <div class="card-body">
+                            <div style="margin-bottom: 25px;">
+                                <h3 style="font-size: 16px; color: var(--primary-color); margin-bottom: 15px;">Your Data Summary</h3>
+                                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px;">
+                                    <div style="text-align: center; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                        <div style="font-size: 24px; font-weight: 600; color: var(--primary-color); margin-bottom: 5px;">3</div>
+                                        <div style="font-size: 14px; color: var(--secondary-color);">Data Sources</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                        <div style="font-size: 24px; font-weight: 600; color: var(--primary-color); margin-bottom: 5px;">85%</div>
+                                        <div style="font-size: 14px; color: var(--secondary-color);">Profile Completeness</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                        <div style="font-size: 24px; font-weight: 600; color: var(--primary-color); margin-bottom: 5px;">92%</div>
+                                        <div style="font-size: 14px; color: var(--secondary-color);">Compatibility Score</div>
+                                    </div>
+                                    <div style="text-align: center; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                        <div style="font-size: 24px; font-weight: 600; color: var(--primary-color); margin-bottom: 5px;">7</div>
+                                        <div style="font-size: 14px; color: var(--secondary-color);">High Matches</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 style="font-size: 16px; color: var(--primary-color); margin-bottom: 15px;">Key Insights</h3>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                        <span style="font-weight: 500;">Music Preferences</span>
+                                        <span style="color: var(--primary-color);">Rock, Alternative, Electronic</span>
+                                    </div>
+                                    <div style="height: 6px; background-color: #e2e8f0; border-radius: 3px; margin-bottom: 15px;">
+                                        <div style="height: 100%; width: 85%; background-color: var(--primary-color); border-radius: 3px;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                        <span style="font-weight: 500;">Communication Style</span>
+                                        <span style="color: var(--primary-color);">Analytical & Direct</span>
+                                    </div>
+                                    <div style="height: 6px; background-color: #e2e8f0; border-radius: 3px; margin-bottom: 15px;">
+                                        <div style="height: 100%; width: 78%; background-color: var(--primary-color); border-radius: 3px;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                        <span style="font-weight: 500;">Activity Level</span>
+                                        <span style="color: var(--primary-color);">Active & Outdoor-oriented</span>
+                                    </div>
+                                    <div style="height: 6px; background-color: #e2e8f0; border-radius: 3px; margin-bottom: 15px;">
+                                        <div style="height: 100%; width: 92%; background-color: var(--primary-color); border-radius: 3px;"></div>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; justify-content: center;">
+                                    <a href="compatibility.html" class="btn btn-primary">View AI Compatibility Analysis</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- Profile Stats -->
+                    <div class="card" style="margin-bottom: 30px;">
+                        <div class="card-header">
+                            <h2 style="font-size: 20px; font-weight: 600;">Profile Stats</h2>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                                <div style="text-align: center; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                    <div style="font-size: 28px; font-weight: 600; color: var(--primary-color);">143</div>
+                                    <div style="font-size: 14px; color: var(--secondary-color);">Profile Views</div>
+                                </div>
+                                <div style="text-align: center; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                    <div style="font-size: 28px; font-weight: 600; color: var(--primary-color);">24</div>
+                                    <div style="font-size: 14px; color: var(--secondary-color);">Likes Received</div>
+                                </div>
+                                <div style="text-align: center; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                    <div style="font-size: 28px; font-weight: 600; color: var(--primary-color);">15</div>
+                                    <div style="font-size: 14px; color: var(--secondary-color);">Mutual Matches</div>
+                                </div>
+                                <div style="text-align: center; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                    <div style="font-size: 28px; font-weight: 600; color: var(--primary-color);">8</div>
+                                    <div style="font-size: 14px; color: var(--secondary-color);">Active Conversations</div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background-color: #ebf8ff; border-radius: 8px; margin-bottom: 20px;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <i class="fas fa-star" style="color: var(--primary-color);"></i>
+                                    <div style="font-weight: 500;">Profile Rating</div>
+                                    <div style="margin-left: auto; font-weight: 600; color: var(--primary-color);">4.8/5.0</div>
+                                </div>
+                                <div style="height: 6px; background-color: rgba(255,255,255,0.5); border-radius: 3px;">
+                                    <div style="height: 100%; width: 96%; background-color: var(--primary-color); border-radius: 3px;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 15px; color: var(--primary-color); margin-bottom: 10px;">Profile Activity</h3>
+                                <div style="height: 180px;">
+                                    <canvas id="activityChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Suggested Actions -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 style="font-size: 20px; font-weight: 600;">Suggested Actions</h2>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(33, 147, 176, 0.2); display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                                        <i class="fas fa-upload"></i>
+                                    </div>
+                                    <div style="flex-grow: 1;">
+                                        <div style="font-weight: 500; margin-bottom: 3px;">Upload Spotify Data</div>
+                                        <div style="font-size: 13px; color: var(--light-text);">Improve matches by 15%</div>
+                                    </div>
+                                    <a href="data-upload.html" class="btn btn-sm btn-outline">Add</a>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(33, 147, 176, 0.2); display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                                        <i class="fas fa-images"></i>
+                                    </div>
+                                    <div style="flex-grow: 1;">
+                                        <div style="font-weight: 500; margin-bottom: 3px;">Add More Photos</div>
+                                        <div style="font-size: 13px; color: var(--light-text);">Profiles with 4+ photos get more matches</div>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline">Add</button>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background-color: #f0f7fa; border-radius: 8px;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(33, 147, 176, 0.2); display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                                        <i class="fas fa-pen"></i>
+                                    </div>
+                                    <div style="flex-grow: 1;">
+                                        <div style="font-weight: 500; margin-bottom: 3px;">Complete About Section</div>
+                                        <div style="font-size: 13px; color: var(--light-text);">Add more details about yourself</div>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>DataDate</h2>
+                    <p>Where Data Drives Connection</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="matches.html">Matches</a></li>
+                        <li><a href="compatibility.html">Compatibility</a></li>
+                        <li><a href="messages.html">Messages</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="data-upload.html">Upload Data</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DataDate - Where Data Drives Connection</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/match-data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activity chart
+            const ctx = document.getElementById('activityChart').getContext('2d');
+            
+            const activityChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Profile Activity',
+                        data: [12, 19, 8, 15, 9, 21, 17],
+                        fill: true,
+                        backgroundColor: 'rgba(196, 47, 124, 0.1)',
+                        borderColor: 'rgb(196, 47, 124)',
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

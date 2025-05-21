@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDate - Compatibility Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/datadate-unified.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>DataDate</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="matches.html">Matches</a></li>
+                    <li><a href="compatibility.html" class="active">Compatibility</a></li>
+                    <li><a href="messages.html">Messages</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="data-upload.html">Upload Data</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <h1 class="section-title">AI-Powered Compatibility Analysis</h1>
+            <p style="max-width: 700px; margin: 0 auto;">Our AI has analyzed your profile data to find your most compatible matches based on interests, communication style, activity patterns, and more.</p>
+        </div>
+        
+        <!-- Top Matches Section -->
+        <section class="compatibility-section">
+            <h2 style="font-size: 22px; color: var(--primary-color); margin-bottom: 20px;">
+                <i class="fas fa-star" style="margin-right: 8px;"></i>
+                Top Compatibility Matches
+            </h2>
+            
+            <div id="matches-container">
+                <!-- Match content will be loaded from match-data.js -->
+            </div>
+        </section>
+        
+        <!-- Detailed Compatibility Analysis -->
+        <section class="compatibility-section">
+            <h2 style="font-size: 22px; color: var(--primary-color); margin-bottom: 20px;">
+                <i class="fas fa-chart-bar" style="margin-right: 8px;"></i>
+                Detailed Compatibility Analysis
+            </h2>
+            
+            <div class="compatibility-details">
+                <div class="details-header">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255,255,255,0.3);">
+                            <i class="fas fa-user" style="font-size: 24px; color: var(--primary-light);"></i>
+                        </div>
+                        <i class="fas fa-exchange-alt"></i>
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255,255,255,0.3);">
+                            <i class="fas fa-user" style="font-size: 24px; color: var(--primary-light);"></i>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <h2 style="font-size: 24px; margin-bottom: 5px;">You & Emma Williams</h2>
+                        <p style="opacity: 0.8;">Exceptional compatibility based on shared interests and communication style</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 32px; font-weight: bold; margin-bottom: 5px;" id="compatibility-percentage">95%</div>
+                        <span style="font-size: 14px; opacity: 0.8;">Match Score</span>
+                    </div>
+                </div>
+                
+                <div class="compatibility-factors">
+                    <div class="factor-card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-heart" style="color: var(--primary-color);"></i>
+                                <span style="font-weight: 500;">Interests</span>
+                            </div>
+                            <span style="font-weight: 600; color: var(--primary-color);">92%</span>
+                        </div>
+                        <p style="color: var(--secondary-color); font-size: 14px; margin-bottom: 15px;">
+                            You share many common interests and hobbies, creating excellent potential for shared activities.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="interest-tag">Photography</span>
+                            <span class="interest-tag">Hiking</span>
+                            <span class="interest-tag">Travel</span>
+                            <span class="interest-tag">Coffee</span>
+                            <span class="interest-tag">Design</span>
+                        </div>
+                    </div>
+                    
+                    <div class="factor-card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-music" style="color: var(--primary-color);"></i>
+                                <span style="font-weight: 500;">Music Taste</span>
+                            </div>
+                            <span style="font-weight: 600; color: var(--primary-color);">88%</span>
+                        </div>
+                        <p style="color: var(--secondary-color); font-size: 14px; margin-bottom: 15px;">
+                            Your music preferences align well, with shared interest in indie rock, electronica, and folk genres.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="interest-tag">Indie Rock</span>
+                            <span class="interest-tag">Electronica</span>
+                            <span class="interest-tag">Folk</span>
+                        </div>
+                    </div>
+                    
+                    <div class="factor-card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-comments" style="color: var(--primary-color);"></i>
+                                <span style="font-weight: 500;">Communication</span>
+                            </div>
+                            <span style="font-weight: 600; color: var(--primary-color);">95%</span>
+                        </div>
+                        <p style="color: var(--secondary-color); font-size: 14px;">
+                            Your communication styles are highly compatible, suggesting comfortable and effortless conversations.
+                        </p>
+                    </div>
+                    
+                    <div class="factor-card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-book" style="color: var(--primary-color);"></i>
+                                <span style="font-weight: 500;">Reading Habits</span>
+                            </div>
+                            <span style="font-weight: 600; color: var(--primary-color);">82%</span>
+                        </div>
+                        <p style="color: var(--secondary-color); font-size: 14px;">
+                            You both enjoy similar literature, particularly science fiction and non-fiction books.
+                        </p>
+                    </div>
+                    
+                    <div class="factor-card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-heartbeat" style="color: var(--primary-color);"></i>
+                                <span style="font-weight: 500;">Activity Level</span>
+                            </div>
+                            <span style="font-weight: 600; color: var(--primary-color);">90%</span>
+                        </div>
+                        <p style="color: var(--secondary-color); font-size: 14px;">
+                            Your activity patterns align very well, with similar exercise frequency and daily activity levels.
+                        </p>
+                    </div>
+                    
+                    <div class="factor-card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-shopping-bag" style="color: var(--primary-color);"></i>
+                                <span style="font-weight: 500;">Lifestyle</span>
+                            </div>
+                            <span style="font-weight: 600; color: var(--primary-color);">85%</span>
+                        </div>
+                        <p style="color: var(--secondary-color); font-size: 14px;">
+                            Your spending habits and brand preferences suggest compatible lifestyle choices.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="compatibility-chart">
+                    <canvas id="compatibilityRadarChart"></canvas>
+                </div>
+                
+                <div class="explanation-section">
+                    <h3 class="explanation-title">AI Compatibility Insights</h3>
+                    <ul class="explanation-list" id="compatibility-insights">
+                        <li>You have an exceptional compatibility! This is a rare and promising match.</li>
+                        <li>You share many interests, including photography, hiking, and travel.</li>
+                        <li>Your music tastes are highly compatible. You'd likely enjoy making playlists together.</li>
+                        <li>Your communication styles are highly compatible, suggesting easy and comfortable conversations.</li>
+                        <li>Your activity levels and rhythms are very compatible, suggesting you could enjoy physical activities together.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>DataDate</h2>
+                    <p>Where Data Drives Connection</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="matches.html">Matches</a></li>
+                        <li><a href="compatibility.html">Compatibility</a></li>
+                        <li><a href="messages.html">Messages</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="data-upload.html">Upload Data</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DataDate - Where Data Drives Connection</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/match-data.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Radar chart for compatibility visualization
+            const ctx = document.getElementById('compatibilityRadarChart').getContext('2d');
+            
+            // Create the radar chart
+            let compatibilityRadarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Interests',
+                        'Music Taste',
+                        'Communication',
+                        'Reading Habits',
+                        'Activity Level',
+                        'Lifestyle'
+                    ],
+                    datasets: [{
+                        label: 'Compatibility Score',
+                        data: [90, 85, 92, 83, 87, 86], // Default data
+                        fill: true,
+                        backgroundColor: 'rgba(196, 47, 124, 0.2)',
+                        borderColor: 'rgb(196, 47, 124)',
+                        pointBackgroundColor: 'rgb(196, 47, 124)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(196, 47, 124)'
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: {
+                                stepSize: 20
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Function to update the chart data based on match score
+            function updateChartData(matchScore) {
+                if (!compatibilityRadarChart) return;
+                
+                // Base the values around the match score with some variation
+                const baseScore = matchScore || 90;
+                const variability = 8; // How much values can vary from the base score
+                
+                // Generate new values around the base score
+                const newData = [
+                    Math.min(100, Math.max(50, Math.floor(baseScore + (Math.random() * variability - variability/2)))), // Interests
+                    Math.min(100, Math.max(50, Math.floor(baseScore + (Math.random() * variability - variability/2)))), // Music Taste
+                    Math.min(100, Math.max(50, Math.floor(baseScore + (Math.random() * variability - variability/2)))), // Communication
+                    Math.min(100, Math.max(50, Math.floor(baseScore + (Math.random() * variability - variability/2)))), // Reading Habits
+                    Math.min(100, Math.max(50, Math.floor(baseScore + (Math.random() * variability - variability/2)))), // Activity Level
+                    Math.min(100, Math.max(50, Math.floor(baseScore + (Math.random() * variability - variability/2))))  // Lifestyle
+                ];
+                
+                // Update chart data
+                compatibilityRadarChart.data.datasets[0].data = newData;
+                compatibilityRadarChart.update();
+                
+                // Also update the factor cards with the new values
+                updateFactorCards(newData);
+            }
+            
+            // Update the factor cards with the current values
+            function updateFactorCards(data) {
+                const factorPercentages = document.querySelectorAll('.factor-card span[style*="font-weight: 600; color: var(--primary-color)"]');
+                
+                factorPercentages.forEach((el, index) => {
+                    if (index < data.length) {
+                        el.textContent = `${data[index]}%`;
+                    }
+                });
+            }
+
+            // Update compatibility details with first match data
+            if (matchData && matchData.length > 0) {
+                const firstMatch = matchData[0];
+                // Update the name in the header
+                document.querySelector('.details-header h2').textContent = `You & ${firstMatch.name}`;
+                
+                // Update the compatibility percentage to match the actual score
+                const compatibilityPercentage = document.getElementById('compatibility-percentage');
+                if (compatibilityPercentage) {
+                    compatibilityPercentage.textContent = `${firstMatch.matchScore}%`;
+                }
+                
+                // Update the chart data based on the match score
+                updateChartData(firstMatch.matchScore);
+                
+                // Update the compatibility description based on the score
+                const descriptionElement = document.querySelector('.details-header p');
+                if (descriptionElement) {
+                    let description = "";
+                    if (firstMatch.matchScore >= 95) {
+                        description = "Exceptional compatibility based on shared interests and communication style";
+                    } else if (firstMatch.matchScore >= 90) {
+                        description = "Excellent compatibility with strong alignment in key areas";
+                    } else if (firstMatch.matchScore >= 85) {
+                        description = "Very good compatibility with many shared interests";
+                    } else if (firstMatch.matchScore >= 80) {
+                        description = "Good compatibility with potential for a meaningful connection";
+                    } else {
+                        description = "Moderate compatibility with some shared interests";
+                    }
+                    descriptionElement.textContent = description;
+                }
+                
+                // Update the insights text 
+                const insightsList = document.getElementById('compatibility-insights');
+                if (insightsList) {
+                    const chartData = compatibilityRadarChart.data.datasets[0].data;
+                    const insightQuality = firstMatch.matchScore >= 90 ? "exceptional" : 
+                                          firstMatch.matchScore >= 85 ? "excellent" : 
+                                          firstMatch.matchScore >= 80 ? "strong" : "good";
+                                          
+                    // Generate insights text
+                    const compatibilityText = firstMatch.matchScore >= 90 ? "This is a rare and promising match." : 
+                                             firstMatch.matchScore >= 85 ? "This is a very promising connection." :
+                                             firstMatch.matchScore >= 80 ? "You have good potential together." :
+                                             "There's potential for a meaningful connection.";
+                                             
+                    // Generate HTML for the insights
+                    insightsList.innerHTML = `
+                        <li>You have an ${insightQuality} ${firstMatch.matchScore}% compatibility! ${compatibilityText}</li>
+                        <li>You share many interests (${chartData[0]}% similarity), including ${firstMatch.interests.slice(0, 3).join(', ')}.</li>
+                        <li>Your music tastes are ${chartData[1] >= 85 ? 'highly' : 'moderately'} compatible (${chartData[1]}%). You'd likely enjoy sharing music together.</li>
+                        <li>Your communication styles are ${chartData[2] >= 85 ? 'highly' : 'reasonably'} compatible (${chartData[2]}%), suggesting ${chartData[2] >= 90 ? 'easy and comfortable' : 'good'} conversations.</li>
+                        <li>Your activity levels are ${chartData[4] >= 85 ? 'very' : 'somewhat'} compatible (${chartData[4]}%), suggesting you could enjoy activities together.</li>
+                    `;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDate - Upload Your Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/datadate-unified.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>DataDate</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="matches.html">Matches</a></li>
+                    <li><a href="compatibility.html">Compatibility</a></li>
+                    <li><a href="messages.html">Messages</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="data-upload.html" class="active">Upload Data</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <h1 class="section-title">Upload Your Data</h1>
+            <p style="max-width: 700px; margin: 0 auto;">Upload your data from various sources to enhance your profile and get better matches. The more data you provide, the better our AI can understand your preferences.</p>
+        </div>
+        
+        <div class="upload-sections">
+            <!-- Spotify Data Upload -->
+            <div class="upload-card">
+                <div class="upload-header">
+                    <div class="upload-icon">
+                        <i class="fab fa-spotify"></i>
+                    </div>
+                    <h2 class="upload-title">Spotify Music Data</h2>
+                </div>
+                <div class="upload-body">
+                    <p class="upload-description">Connect your Spotify account to share your music preferences. We'll analyze your top artists, genres, and listening patterns.</p>
+                    
+                    <div class="upload-instructions">
+                        <div class="instructions-title">How it works:</div>
+                        <ul class="instructions-list">
+                            <li>Click the connect button below</li>
+                            <li>Log in to your Spotify account</li>
+                            <li>Authorize DataDate to access your listening data</li>
+                            <li>Your music preferences will be analyzed and added to your profile</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn btn-primary" style="display: flex; align-items: center; gap: 8px;">
+                        <i class="fab fa-spotify"></i>
+                        Connect Spotify Account
+                    </button>
+                    
+                    <div class="upload-status" id="spotify-status"></div>
+                </div>
+            </div>
+            
+            <!-- Search History Upload -->
+            <div class="upload-card">
+                <div class="upload-header">
+                    <div class="upload-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h2 class="upload-title">Search History</h2>
+                </div>
+                <div class="upload-body">
+                    <p class="upload-description">Upload your search history data file from Google or other browsers to help us understand your interests and preferences.</p>
+                    
+                    <div class="upload-instructions">
+                        <div class="instructions-title">How to get your search history:</div>
+                        <ul class="instructions-list">
+                            <li>Go to Google Takeout or your browser's history page</li>
+                            <li>Download your search history as a JSON or CSV file</li>
+                            <li>Upload the file using the form below</li>
+                        </ul>
+                    </div>
+                    
+                    <form id="search-history-form" class="upload-form">
+                        <div class="file-upload" id="search-history-upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag and drop your search history file here</p>
+                            <p>or click to browse</p>
+                            <input type="file" id="search-history-file" accept=".json,.csv">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Upload Search History</button>
+                    </form>
+                    
+                    <div class="upload-status" id="search-history-status"></div>
+                </div>
+            </div>
+            
+            <!-- Purchase History Upload -->
+            <div class="upload-card">
+                <div class="upload-header">
+                    <div class="upload-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h2 class="upload-title">Purchase History</h2>
+                </div>
+                <div class="upload-body">
+                    <p class="upload-description">Upload your purchase history from Amazon, bank statements, or other sources to help us understand your shopping preferences.</p>
+                    
+                    <div class="upload-instructions">
+                        <div class="instructions-title">How to get your purchase data:</div>
+                        <ul class="instructions-list">
+                            <li>Go to your Amazon account and download order history</li>
+                            <li>Export bank or credit card statements in CSV format</li>
+                            <li>Remove any sensitive financial information</li>
+                        </ul>
+                    </div>
+                    
+                    <form id="purchase-history-form" class="upload-form">
+                        <div class="file-upload" id="purchase-history-upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag and drop your purchase data file here</p>
+                            <p>or click to browse</p>
+                            <input type="file" id="purchase-history-file" accept=".json,.csv">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Upload Purchase Data</button>
+                    </form>
+                    
+                    <div class="upload-status" id="purchase-history-status"></div>
+                </div>
+            </div>
+            
+            <!-- Text Analysis Upload -->
+            <div class="upload-card">
+                <div class="upload-header">
+                    <div class="upload-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h2 class="upload-title">Text & Communication</h2>
+                </div>
+                <div class="upload-body">
+                    <p class="upload-description">Share some writing samples or chat logs to help us analyze your communication style and personality traits.</p>
+                    
+                    <form id="text-analysis-form" class="upload-form">
+                        <div class="form-group">
+                            <label>Writing Sample:</label>
+                            <textarea class="form-control" id="text-sample" placeholder="Paste a sample of your writing here (e.g., social media posts, emails, etc.)" rows="5"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Social Media Profiles (optional):</label>
+                            <input type="text" class="form-control" id="social-profiles" placeholder="Twitter/X, Instagram, or other social media handles">
+                        </div>
+                        <div class="file-upload" id="text-data-upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>You can also upload chat logs or other text files</p>
+                            <p>(Optional)</p>
+                            <input type="file" id="text-data-file" accept=".txt,.json,.csv">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Analyze Text Data</button>
+                    </form>
+                    
+                    <div class="upload-status" id="text-analysis-status"></div>
+                </div>
+            </div>
+            
+            <!-- Reading History Upload -->
+            <div class="upload-card">
+                <div class="upload-header">
+                    <div class="upload-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h2 class="upload-title">Reading History</h2>
+                </div>
+                <div class="upload-body">
+                    <p class="upload-description">Share your reading history from Goodreads, Kindle, or manually enter books you've read to help us understand your interests.</p>
+                    
+                    <div class="upload-instructions">
+                        <div class="instructions-title">Options:</div>
+                        <ul class="instructions-list">
+                            <li>Upload a Goodreads export file (.csv)</li>
+                            <li>Share your Kindle reading history</li>
+                            <li>Or manually enter books you've read</li>
+                        </ul>
+                    </div>
+                    
+                    <form id="reading-history-form" class="upload-form">
+                        <div class="file-upload" id="reading-history-upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag and drop your reading history file here</p>
+                            <p>or click to browse</p>
+                            <input type="file" id="reading-history-file" accept=".csv,.json">
+                        </div>
+                        <div class="form-group" style="margin-top: 15px;">
+                            <label>Or list some of your favorite books (one per line):</label>
+                            <textarea class="form-control" id="favorite-books" placeholder="Book title by Author" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Upload Reading History</button>
+                    </form>
+                    
+                    <div class="upload-status" id="reading-history-status"></div>
+                </div>
+            </div>
+            
+            <!-- Activity Data Upload -->
+            <div class="upload-card">
+                <div class="upload-header">
+                    <div class="upload-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h2 class="upload-title">Activity & Lifestyle</h2>
+                </div>
+                <div class="upload-body">
+                    <p class="upload-description">Share data from fitness trackers, health apps, or manually enter information about your activity patterns.</p>
+                    
+                    <form id="activity-data-form" class="upload-form">
+                        <div class="form-group">
+                            <label>Average daily steps:</label>
+                            <input type="number" class="form-control" id="daily-steps" placeholder="e.g., 8000">
+                        </div>
+                        <div class="form-group">
+                            <label>Exercise days per week:</label>
+                            <input type="number" class="form-control" id="exercise-days" min="0" max="7" placeholder="0-7">
+                        </div>
+                        <div class="form-group">
+                            <label>Average sleep duration (hours):</label>
+                            <input type="number" class="form-control" id="sleep-duration" step="0.1" placeholder="e.g., 7.5">
+                        </div>
+                        <div class="file-upload" id="activity-data-upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Or upload data from fitness apps (Apple Health, Google Fit, etc.)</p>
+                            <input type="file" id="activity-data-file" accept=".json,.csv,.xml">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Save Activity Data</button>
+                    </form>
+                    
+                    <div class="upload-status" id="activity-data-status"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); text-align: center; margin-bottom: 60px;">
+            <div style="font-size: 40px; color: var(--primary-color); margin-bottom: 20px;">
+                <i class="fas fa-brain"></i>
+            </div>
+            <h2 style="color: var(--primary-color); font-size: 24px; margin-bottom: 15px;">AI-Powered Compatibility Analysis</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px; color: var(--light-text);">After uploading your data, our AI will analyze patterns and preferences to find your most compatible matches. The more data you provide, the more accurate our matching will be.</p>
+            
+            <a href="compatibility.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fas fa-magic"></i>
+                View AI Compatibility Analysis
+            </a>
+        </div>
+        
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>DataDate</h2>
+                    <p>Where Data Drives Connection</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="matches.html">Matches</a></li>
+                        <li><a href="compatibility.html">Compatibility</a></li>
+                        <li><a href="messages.html">Messages</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="data-upload.html">Upload Data</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DataDate - Where Data Drives Connection</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // File upload event listeners
+            const fileInputs = document.querySelectorAll('input[type="file"]');
+            const fileDropAreas = document.querySelectorAll('.file-upload');
+            
+            fileDropAreas.forEach((dropArea, index) => {
+                const fileInput = fileInputs[index];
+                
+                // Click to browse
+                dropArea.addEventListener('click', () => {
+                    fileInput.click();
+                });
+                
+                // File selected
+                fileInput.addEventListener('change', () => {
+                    if (fileInput.files.length > 0) {
+                        const fileName = fileInput.files[0].name;
+                        const fileSize = Math.round(fileInput.files[0].size / 1024);
+                        
+                        const iconElement = dropArea.querySelector('i');
+                        const textElements = dropArea.querySelectorAll('p');
+                        
+                        iconElement.className = 'fas fa-file-alt';
+                        textElements[0].textContent = fileName;
+                        textElements[1].textContent = `${fileSize} KB`;
+                    }
+                });
+            });
+            
+            // Form submission handlers
+            const forms = document.querySelectorAll('form');
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formId = form.id;
+                    const statusElement = document.getElementById(formId.replace('form', 'status'));
+                    
+                    // Simulate form submission
+                    statusElement.textContent = 'Uploading and processing data...';
+                    statusElement.className = 'upload-status';
+                    
+                    // Simulate API response
+                    setTimeout(() => {
+                        statusElement.textContent = 'Data uploaded successfully! Your profile has been enhanced.';
+                        statusElement.className = 'upload-status success';
+                    }, 1500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

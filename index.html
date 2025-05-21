@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataDate - Find Your Perfect Date</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/datadate-unified.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>DataDate</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="matches.html">Matches</a></li>
+          <li><a href="compatibility.html">Compatibility</a></li>
+          <li><a href="messages.html">Messages</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="data-upload.html">Upload Data</a></li>
+          <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Hero Section -->
+      <section style="padding: 80px 0; text-align: center; margin-bottom: 60px;">
+        <h1 style="font-size: 42px; margin-bottom: 20px; color: var(--primary-color);">Where Data Finds Your Perfect Date</h1>
+        <p style="font-size: 18px; max-width: 800px; margin: 0 auto 30px; color: var(--secondary-color);">DataDate leverages deep data analysis to connect you with truly compatible partners. Sign up today and experience the future of dating.</p>
+        <div style="display: flex; gap: 15px; justify-content: center;">
+          <a href="#features" class="btn btn-primary">Learn More</a>
+          <a href="#signup" class="btn btn-secondary">Sign Up</a>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" style="margin-bottom: 80px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2 class="section-title">Why Choose DataDate?</h2>
+          <p style="max-width: 700px; margin: 0 auto 20px;">Our platform uses advanced data integration to create more meaningful connections</p>
+          <a href="compatibility.html" class="btn btn-primary">Try Our AI Compatibility Matching</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px;">
+          <div class="card">
+            <div class="card-body" style="text-align: center; padding: 30px 20px;">
+              <div style="font-size: 36px; color: var(--primary-color); margin-bottom: 20px;">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 style="margin-bottom: 15px;">Deep Data Analysis</h3>
+              <p>We analyze your preferences, habits, and interests to find truly compatible matches.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body" style="text-align: center; padding: 30px 20px;">
+              <div style="font-size: 36px; color: var(--primary-color); margin-bottom: 20px;">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h3 style="margin-bottom: 15px;">LinkedIn Integration</h3>
+              <p>Connect your professional profile to match with people who share your career values.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body" style="text-align: center; padding: 30px 20px;">
+              <div style="font-size: 36px; color: var(--primary-color); margin-bottom: 20px;">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3 style="margin-bottom: 15px;">Location Services</h3>
+              <p>Find matches nearby or in specific locations that fit your lifestyle.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body" style="text-align: center; padding: 30px 20px;">
+              <div style="font-size: 36px; color: var(--primary-color); margin-bottom: 20px;">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 style="margin-bottom: 15px;">Higher Success Rate</h3>
+              <p>Our data-driven approach leads to more meaningful connections and relationships.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Success Stories Section -->
+      <section style="margin-bottom: 80px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2 class="section-title">Success Stories</h2>
+          <p style="max-width: 700px; margin: 0 auto;">Hear from people who found their perfect match</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+          <div class="card">
+            <div class="card-body" style="padding: 30px;">
+              <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J." style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px;">
+                <div>
+                  <div style="font-weight: 600;">Sarah J., 31</div>
+                  <div style="font-size: 14px; color: var(--light-text);">Marketing Manager</div>
+                </div>
+              </div>
+              <p style="font-style: italic; color: var(--secondary-color);">"DataDate's LinkedIn integration helped me find someone with similar career goals. We're now engaged!"</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body" style="padding: 30px;">
+              <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael T." style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px;">
+                <div>
+                  <div style="font-weight: 600;">Michael T., 28</div>
+                  <div style="font-size: 14px; color: var(--light-text);">Software Engineer</div>
+                </div>
+              </div>
+              <p style="font-style: italic; color: var(--secondary-color);">"The verified reviews feature gave me confidence in my matches. I found someone authentic and we've been dating for 6 months."</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body" style="padding: 30px;">
+              <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma L." style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px;">
+                <div>
+                  <div style="font-weight: 600;">Emma L., 35</div>
+                  <div style="font-size: 14px; color: var(--light-text);">Product Designer</div>
+                </div>
+              </div>
+              <p style="font-style: italic; color: var(--secondary-color);">"Finally, a dating app that understands my busy schedule! I matched with someone who has similar availability."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Profiles -->
+      <section style="margin-bottom: 80px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2 class="section-title">Your Top Matches</h2>
+          <p style="max-width: 700px; margin: 0 auto;">Start connecting with compatible matches today</p>
+        </div>
+        
+        <div id="matches-container">
+          <!-- Match content will be loaded from match-data.js -->
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section style="text-align: center; background-color: white; padding: 60px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 60px;">
+        <h2 style="font-size: 28px; margin-bottom: 20px; color: var(--primary-color);">Ready to find your perfect match?</h2>
+        <p style="font-size: 16px; max-width: 600px; margin: 0 auto 30px;">DataDate is the future of data-driven matchmaking, connecting you with compatible people based on real compatibility factors.</p>
+        <a href="#signup" class="btn btn-primary" style="padding: 12px 30px; font-size: 16px;">Sign Up Now</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>DataDate</h2>
+          <p>Where Data Drives Connection</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="matches.html">Matches</a></li>
+            <li><a href="compatibility.html">Compatibility</a></li>
+            <li><a href="messages.html">Messages</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="data-upload.html">Upload Data</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 DataDate - Where Data Drives Connection</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/match-data.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Simple script to demonstrate interaction
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add event listeners to all buttons
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          // Prevent form submission
+          if (!button.getAttribute('href')) {
+            e.preventDefault();
+            
+            // Add ripple effect for buttons that aren't links
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            button.appendChild(ripple);
+            setTimeout(() => {
+              ripple.remove();
+            }, 600);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
